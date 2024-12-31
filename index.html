@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" el objetivo es desearles a todos un muy feliz año 2025">
+  <title>Feliz Año Nuevo</title>
+  <style>
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: black; /* Fondo negro */
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Estilos del header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      padding: 10px 0;
+      font-size: 1.5rem;
+    }
+
+    /* Contenedor de la sección de videos */
+    section {
+      margin: 120px auto;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    section iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    /* Efectos de fuegos artificiales */
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: explode 1.5s ease-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(5);
+        opacity: 0;
+      }
+    }
+
+    /* Responsividad del header */
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.5rem;
+      }
+      header.scrolled {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Feliz Año Nuevo</header>
+  <section>
+    <!-- 9 videos en una cuadrícula -->
+    <iframe src="https://www.yout-ube.com/watch?v=zihh1DaAMdw" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/D1BPox9Ibbk?playlist=D1BPox9Ibbk&autoplay=1&iv_load_policy=3&loop=1&start=" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=V59Imf1g0sg" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=yXQViqx6GMY" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=5qG_nOoHR1I" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=d6Oxwnf1lPE" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=gUUA_aLxVag" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=jKbGg0BqOZg" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=m5UcZ9thgPI" allowfullscreen></iframe>
+    <iframe src="https://www.yout-ube.com/watch?v=eSSZPgpV3xk" allowfullscreen></iframe>
+     <iframe src="https://www.yout-ube.com/watch?v=TYtdYslLY9I" allowfullscreen></iframe>
+     <iframe src="https://www.yout-ube.com/watch?v=N2ANAqO1TLs" allowfullscreen></iframe>
+     <iframe src="https://www.yout-ube.com/watch?v=O2lxEVnhox0" allowfullscreen></iframe>
+     <iframe src="https://www.yout-ube.com/watch?v=XjFsZj1aHow" allowfullscreen></iframe>
+  </section>
+
+  <script>
+    // Reducir el tamaño del header al hacer scroll
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    // Generar fuegos artificiales
+    function createFirework() {
+      const firework = document.createElement("div");
+      firework.classList.add("firework");
+
+      // Posición aleatoria
+      firework.style.left = `${Math.random() * 100}vw`;
+      firework.style.top = `${Math.random() * 100}vh`;
+
+      // Tamaño y color aleatorios
+      const size = Math.random() * 5 + 5; // Tamaño entre 5 y 10px
+      firework.style.width = `${size}px`;
+      firework.style.height = `${size}px`;
+
+      const color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      firework.style.background = color;
+      firework.style.boxShadow = `0 0 10px ${color}, 0 0 30px ${color}`;
+
+      document.body.appendChild(firework);
+
+      // Eliminar después de la animación
+      setTimeout(() => firework.remove(), 1500);
+    }
+
+    setInterval(createFirework, 300); // Crear fuegos artificiales cada 300 ms
+  </script>
+  <footer >
+    
+  <h5>&copy; Carlos Manfrini VERITAS.WEB</h5>
+  
+</footer>
+</body>
+</html>
